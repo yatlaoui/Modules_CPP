@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:36:56 by yaatlaou          #+#    #+#             */
-/*   Updated: 2025/12/18 16:35:05 by yaatlaou         ###   ########.fr       */
+/*   Updated: 2025/12/19 10:24:40 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name )
+Zombie* newZombie(std::string name)
 {
-    std::cout << "Foo" << std::endl;
-    
+    Zombie* zombie = new Zombie(name);
+    return zombie;
 }
