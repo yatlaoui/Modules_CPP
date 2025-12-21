@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:36:56 by yaatlaou          #+#    #+#             */
-/*   Updated: 2025/12/19 10:24:40 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/21 09:18:40 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Zombie* newZombie(std::string name)
 {
+    if (name.empty())
+        name = "Unnamed";
     Zombie* zombie = new Zombie(name);
-    return zombie;
+    return(zombie);
 }

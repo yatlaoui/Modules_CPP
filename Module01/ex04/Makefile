@@ -6,14 +6,14 @@
 #    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 17:45:27 by yasmine           #+#    #+#              #
-#    Updated: 2025/12/16 17:45:28 by yasmine          ###   ########.fr        #
+#    Updated: 2025/12/21 02:18:01 by yasmine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = sed_is_for_losers
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = FileReplacer.cpp main.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

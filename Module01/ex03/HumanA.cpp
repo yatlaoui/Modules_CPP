@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:45:12 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/19 10:45:05 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/21 01:34:23 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,16 @@ void HumanA::attack(void)
               << this->weapon.getType() << std::endl;
 }
 
+
+// Why reference, not pointer?
+
+// HumanA is ALWAYS armed (weapon given in constructor)
+// The weapon exists from creation until destruction
+// The weapon never changes (same weapon object throughout)
+// References cannot be NULL - perfect for this guarantee
+// Justification: Use references when:
+
+// The object ALWAYS exists
+// It's provided at construction time
+// It never changes to a different object
+// You want to enforce these guarantees at compile-time

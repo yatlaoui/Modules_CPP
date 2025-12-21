@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:45:21 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/19 10:43:49 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/21 10:44:31 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <iostream>
 
+//const ref explication 
+
 class Weapon {
     private:
         std::string type;
@@ -23,7 +25,8 @@ class Weapon {
     public:
         Weapon(std::string weaponType);
         ~Weapon(void);
-        const std::string& getType(void) const;
+        
+        const std::string& getType() const;
         void setType(std::string newType);
 };
 

@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:05:59 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/19 10:38:55 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/20 23:00:22 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,4 @@ class Zombie {
 
 Zombie* zombieHorde(int N, std::string name);
 
-#endif // End of header guard
+#endif

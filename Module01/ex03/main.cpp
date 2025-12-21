@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:45:17 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/19 10:51:05 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/21 10:35:16 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 int main(void)
 {
     std::cout << "\n========== TESTING HumanA (with REFERENCE) ==========" << std::endl;
-
     {
         Weapon club = Weapon("crude spiked club");
         HumanA bob("Bob", club);
@@ -25,7 +24,6 @@ int main(void)
         club.setType("some other type of club");
         bob.attack();
     }
-
     std::cout << "\n========== TESTING HumanB (with POINTER) ==========" << std::endl;
     {
         Weapon club = Weapon("crude spiked club");
@@ -35,7 +33,6 @@ int main(void)
         club.setType("some other type of club");
         jim.attack();
     }
-
     std::cout << "\n========== KEY DIFFERENCES ==========" << std::endl;
     std::cout << "HumanA (uses REFERENCE &):" << std::endl;
     std::cout << "  - MUST have a weapon from the start" << std::endl;
@@ -55,3 +52,17 @@ int main(void)
 
     return 0;
 }
+
+// Key Learning Points
+// References: Use when object ALWAYS exists, never NULL
+// Pointers: Use when object MIGHT NOT exist, can be NULL
+// Both see changes to the original object (not copies)
+// Design choice affects API and guarantees
+// References provide stronger compile-time guarantees
+// Real-World Analogy
+// HumanA = A soldier always armed (gun is part of uniform)
+// HumanB = A civilian who might pick up a weapon later
+
+
+
+// un crash sur l'ex03 lorsque la weapon est set a NULL, et ca crash !
