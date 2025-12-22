@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:45:14 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/19 10:43:07 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/22 07:15:42 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include <string>
 #include <iostream>
 #include "Weapon.hpp"
+
+// Reference:
+// HumanA ALWAYS armed (weapon given in constructor)
+// The weapon exists from creation until destruction
+// The weapon never changes
+// Reference cannot be NULL 
 
 class HumanA {
     private:

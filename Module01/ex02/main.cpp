@@ -6,12 +6,17 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:02:00 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/21 09:33:27 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/22 08:18:29 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+
+// A pointer stores the address of a variable
+// A reference is another name for the same variable
+// Accessing a pointer requires dereferencing (*), while a reference is used directly
+// A pointer can be NULL, a reference cannot
 
 int main(void)
 {

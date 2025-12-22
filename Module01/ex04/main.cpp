@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 11:08:07 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/21 15:26:32 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/22 08:36:01 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 #include <fstream>
 #include <string>
 
-std::string replaceContent(const std::string& original_text, const std::string& target, const std::string& replacement)
+// find : returns index of start of first occurrence. If found, returns the index where it begins. If not, returns npos.
+// ifstream : reads the file
+// ofstream : writes in file
+// c_str : transforms string in const char*
+
+std::string replace(const std::string& original_text, const std::string& target, const std::string& replacement)
 {
     std::string modified_text;
     size_t search_start_index = 0;
@@ -37,40 +42,39 @@ int main(int argc, char **argv)
         std::cerr << "Error: Usage: " << argv[0] << " <filename> <old_string> <new_string>" << std::endl;
         return (1);
     }
-    std::string input_filename = argv[1];
-    std::string string_to_remplace = argv[2];
-    std::string replacementString = argv[3];
-    if (string_to_remplace.empty())
+    std::string original_file = argv[1];
+    std::string old_string = argv[2];
+    std::string new_string = argv[3];
+    if (old_string.empty())
     {
         std::cerr << "Error: old_string cannot be empty" << std::endl;
         return (1);
     }
-    std::ifstream inputFileStream(input_filename.c_str());
+    std::ifstream inputFileStream(original_file.c_str());
     if (!inputFileStream.is_open())
     {
-        std::cerr << "Error: Cannot open file: " << input_filename<< std::endl;
+        std::cerr << "Error: Cannot open file: " << original_file << std::endl;
         return (1);
     }
-    std::string fileContent;
-    std::string currentLine;
-    while (std::getline(inputFileStream, currentLine))
+    std::string content;
+    std::string current_line;
+    while (std::getline(inputFileStream, current_line))
     {
-        fileContent = fileContent + currentLine;
-
+        content = content + current_line;
         if (!inputFileStream.eof())
-            fileContent = fileContent + "\n";
+            content = content + "\n";
     }
     inputFileStream.close();
-    std::string replacedText = replaceContent(fileContent, string_to_remplace, replacementString);
-    std::string outputFilename = input_filename+ ".replace";
-    std::ofstream outputFileStream(outputFilename.c_str());
+    std::string replacedText = replace(content, old_string, new_string);
+    std::string new_file = original_file + ".replace";
+    std::ofstream outputFileStream(new_file.c_str());
     if (!outputFileStream.is_open())
     {
-        std::cerr << "Error: Cannot create file: " << outputFilename << std::endl;
+        std::cerr << "Error: Cannot create file: " << new_file << std::endl;
         return (1);
     }
     outputFileStream << replacedText;
     outputFileStream.close();
-    std::cout << "Replacement complete. Output written to: " << outputFilename << std::endl;
+    std::cout << "Replacement complete. Output written to: " << new_file << std::endl;
     return (0);
 }
