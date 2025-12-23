@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 19:51:45 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/22 11:20:21 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/23 14:14:30 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::Fixed() : _fixedPointValue(0)
 Fixed::Fixed(const Fixed &copy) 
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = copy; //pour changer la valeur
+	*this = copy;
 }
 
 Fixed &Fixed::operator=(Fixed const &copy) 

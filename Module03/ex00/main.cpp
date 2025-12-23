@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 04:34:32 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/23 04:49:38 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/23 14:17:00 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ int main()
 	std::cout << "=== Test 5: Energy Depletion ===" << std::endl;
 	{
 		ClapTrap clap5("Eve");
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 12; i++)
+		{
 			clap5.attack("enemy");
 		}
 	}
@@ -83,6 +84,5 @@ int main()
 		clap10.attack("target");
 	}
 	std::cout << std::endl;
-
-	return 0;
+	return (0);
 }
