@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
+#    By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/23 04:45:54 by yasmine           #+#    #+#              #
-#    Updated: 2025/12/23 04:46:04 by yasmine          ###   ########.fr        #
+#    Updated: 2025/12/23 17:36:54 by yaatlaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = brain
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = Fixed.cpp main.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

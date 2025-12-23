@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
+#    By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/23 04:34:42 by yasmine           #+#    #+#              #
-#    Updated: 2025/12/23 04:34:54 by yasmine          ###   ########.fr        #
+#    Updated: 2025/12/23 17:40:40 by yaatlaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fragtrap
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = Fixed.cpp main.cpp
+SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

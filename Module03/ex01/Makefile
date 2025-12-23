@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
+#    By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/23 04:35:00 by yasmine           #+#    #+#              #
-#    Updated: 2025/12/23 04:35:14 by yasmine          ###   ########.fr        #
+#    Updated: 2025/12/23 17:38:23 by yaatlaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = scavtrap
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = Fixed.cpp main.cpp
+SRC = ClapTrap.cpp main.cpp ScavTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
