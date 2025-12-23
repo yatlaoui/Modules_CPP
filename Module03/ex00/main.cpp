@@ -6,13 +6,14 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 04:34:32 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/23 04:34:34 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/23 04:49:38 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main() {
+int main()
+{
 	std::cout << "=== Test 1: Basic Construction and Destruction ===" << std::endl;
 	{
 		ClapTrap clap1("Bob");

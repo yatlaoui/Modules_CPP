@@ -1,21 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/12/23 04:46:32 by yasmine           #+#    #+#              #
+#    Updated: 2025/12/23 04:46:41 by yasmine          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = abstract
+CC = c++
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
-OBJS = $(SRCS:.cpp=.o)
+SRC = Fixed.cpp main.cpp
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
