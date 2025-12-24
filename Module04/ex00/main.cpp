@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/24 07:40:31 by yasmine           #+#    #+#             */
+/*   Updated: 2025/12/24 07:40:50 by yasmine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main() {
+int main() 
+{
     std::cout << "=== Testing Correct Polymorphism ===" << std::endl;
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
@@ -43,5 +56,5 @@ int main() {
     WrongCat directWrongCat;
     directWrongCat.makeSound(); // This will output WrongCat sound
 
-    return 0;
+    return (0);
 }

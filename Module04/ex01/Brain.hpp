@@ -1,5 +1,16 @@
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/24 07:42:46 by yasmine           #+#    #+#             */
+/*   Updated: 2025/12/24 07:42:53 by yasmine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -18,5 +29,3 @@ class Brain
         void setIdea(int index, const std::string& idea);
         std::string getIdea(int index) const;
 };
-
-#endif

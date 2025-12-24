@@ -1,5 +1,14 @@
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/24 07:45:10 by yasmine           #+#    #+#             */
+/*   Updated: 2025/12/24 07:45:15 by yasmine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <string>
 #include <iostream>
@@ -17,5 +26,3 @@ public:
     virtual void makeSound() const = 0;
     std::string getType() const;
 };
-
-#endif

@@ -1,5 +1,16 @@
-#ifndef WRONGCAT_HPP
-#define WRONGCAT_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/24 07:44:12 by yasmine           #+#    #+#             */
+/*   Updated: 2025/12/24 07:44:18 by yasmine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
 
 #include "WrongAnimal.hpp"
 
@@ -12,5 +23,3 @@ public:
 
     void makeSound() const;
 };
-
-#endif
