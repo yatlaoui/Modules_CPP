@@ -1,16 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/24 07:43:23 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/24 07:43:28 by yasmine          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#pragma once
+#ifndef DOG_HPP
+#define DOG_HPP
 
 #include "Animal.hpp"
 #include "Brain.hpp"
@@ -28,3 +17,5 @@ public:
     void makeSound() const;
     Brain* getBrain() const;
 };
+
+#endif

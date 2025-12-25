@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 21:52:18 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/21 23:45:47 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/24 17:17:12 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ Fixed Fixed::operator-(const Fixed &copy) const
 Fixed Fixed::operator*(const Fixed &copy) const
 {
 	Fixed result;
-	long temp = (long)this->_fixedPointValue * (long)copy._fixedPointValue;
-	result.setRawBits(temp >> _fractionalBits);
+	result = this->_fixedPointValue * copy._fixedPointValue;
+	// result.setRawBits(temp >> _fractionalBits);
 	return result;
 }
 
@@ -166,6 +166,39 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
 	return (a > b) ? a : b;
 }
+
+
+// Fixed	&Fixed::min(Fixed &first, Fixed &second)
+// {
+// 	if (first.toFloat() <= second.toFloat())
+// 		return (first);
+// 	else
+// 		return (second);
+// }
+
+// const Fixed	&Fixed::min(const Fixed &first, const Fixed &second)
+// {
+// 	if (first.toFloat() <= second.toFloat())
+// 		return (first);
+// 	else
+// 		return (second);
+// }
+
+// Fixed	&Fixed::max(Fixed &first, Fixed &second)
+// {
+// 	if (first.toFloat() >= second.toFloat())
+// 		return (first);
+// 	else
+// 		return (second);
+// }
+
+// const Fixed	&Fixed::max(const Fixed &first, const Fixed &second)
+// {
+// 	if (first.toFloat() >= second.toFloat())
+// 		return (first);
+// 	else
+// 		return (second);
+// }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {

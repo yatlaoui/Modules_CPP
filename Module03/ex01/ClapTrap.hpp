@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/23 04:35:51 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/23 04:48:06 by yasmine          ###   ########.fr       */
+/*   Created: 2025/12/24 22:40:34 by yasmine           #+#    #+#             */
+/*   Updated: 2025/12/24 22:40:36 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,3 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };
-

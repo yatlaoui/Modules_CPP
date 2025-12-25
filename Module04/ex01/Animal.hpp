@@ -1,31 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/24 07:42:03 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/24 07:42:14 by yasmine          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#pragma once
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <string>
 #include <iostream>
 
-class Animal 
-{
-    protected:
-        std::string type;
+class Animal {
+protected:
+    std::string type;
 
-    public:
-        Animal();
-        Animal(const Animal& other);
-        Animal& operator=(const Animal& other);
-        virtual ~Animal();
+public:
+    Animal();
+    Animal(const Animal& other);
+    Animal& operator=(const Animal& other);
+    virtual ~Animal();
 
-        virtual void makeSound() const;
-        std::string getType() const;
+    virtual void makeSound() const;
+    std::string getType() const;
 };
+
+#endif

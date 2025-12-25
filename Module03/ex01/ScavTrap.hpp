@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/23 04:36:47 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/23 04:48:16 by yasmine          ###   ########.fr       */
+/*   Created: 2025/12/24 22:41:02 by yasmine           #+#    #+#             */
+/*   Updated: 2025/12/24 22:41:04 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap 
+class ScavTrap : public ClapTrap
 {
 	public:
 		ScavTrap();
@@ -26,4 +26,3 @@ class ScavTrap : public ClapTrap
 		void attack(const std::string& target);
 		void guardGate();
 };
-

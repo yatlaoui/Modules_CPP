@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 04:35:23 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/23 14:16:06 by yaatlaou         ###   ########.fr       */
+/*   Updated: 2025/12/24 22:33:05 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,22 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	*this = other;
 }
 
-ClapTrap& ClapTrap::operator=(const ClapTrap& other) 
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
 	std::cout << "ClapTrap copy assignment operator called" << std::endl;
-	if (this != &other) {
+	// Check for self-assignment (e.g., clap1 = clap1)
+	// this is a pointer to the current object, &other is the address of the parameter
+	// If they're the same, we don't need to do anything
+	if (this != &other) 
+	{
+		// Copy each member variable from other to this object
 		_name = other._name;
 		_hitPoints = other._hitPoints;
 		_energyPoints = other._energyPoints;
 		_attackDamage = other._attackDamage;
 	}
+	// Return reference to this object to allow chaining
+	// Dereference 'this' to return the object, not the pointer
 	return (*this);
 }
 
@@ -47,12 +54,12 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (_hitPoints == 0) 
+	if (_hitPoints == 0)
 	{
 		std::cout << "ClapTrap " << _name << " can't attack because it has no hit points left!" << std::endl;
 		return;
 	}
-	if (_energyPoints == 0) 
+	if (_energyPoints == 0)
 	{
 		std::cout << "ClapTrap " << _name << " can't attack because it has no energy points left!" << std::endl;
 		return;
@@ -72,7 +79,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	{
 		_hitPoints = 0;
 		std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage and is destroyed!" << std::endl;
-	} 
+	}
 	else
 	{
 		_hitPoints -= amount;

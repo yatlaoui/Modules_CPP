@@ -6,33 +6,37 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 07:40:12 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/24 07:40:14 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/25 02:19:34 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() {
+Dog::Dog()
+{
     type = "Dog";
     std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other) {
+Dog::Dog(const Dog& other) : Animal(other)
+{
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
-Dog& Dog::operator=(const Dog& other) {
+Dog& Dog::operator=(const Dog& other)
+{
     std::cout << "Dog assignment operator called" << std::endl;
-    if (this != &other) {
+    if (this != &other)
         Animal::operator=(other);
-    }
-    return *this;
+    return (*this);
 }
 
-Dog::~Dog() {
+Dog::~Dog()
+{
     std::cout << "Dog destructor called" << std::endl;
 }
 
-void Dog::makeSound() const {
+void Dog::makeSound() const
+{
     std::cout << "Woof! Woof!" << std::endl;
 }
