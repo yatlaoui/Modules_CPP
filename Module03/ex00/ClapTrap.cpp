@@ -31,19 +31,13 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
 	std::cout << "ClapTrap copy assignment operator called" << std::endl;
-	// Check for self-assignment (e.g., clap1 = clap1)
-	// this is a pointer to the current object, &other is the address of the parameter
-	// If they're the same, we don't need to do anything
 	if (this != &other) 
 	{
-		// Copy each member variable from other to this object
 		_name = other._name;
 		_hitPoints = other._hitPoints;
 		_energyPoints = other._energyPoints;
 		_attackDamage = other._attackDamage;
 	}
-	// Return reference to this object to allow chaining
-	// Dereference 'this' to return the object, not the pointer
 	return (*this);
 }
 
