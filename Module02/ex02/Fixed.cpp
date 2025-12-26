@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 21:52:18 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/24 17:17:12 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/26 08:52:30 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,72 +42,92 @@ Fixed &Fixed::operator=(const Fixed &copy)
 	return *this;
 }
 
-bool Fixed::operator>(const Fixed &copy) const
+// ============================================================================
+// COMPARISON OPERATORS (6 operators)
+// ============================================================================
+
+bool Fixed::operator>(const Fixed &other) const
 {
-	return this->_fixedPointValue > copy._fixedPointValue;
+	return this->_fixedPointValue > other._fixedPointValue;
 }
 
-bool Fixed::operator<(const Fixed &copy) const
+bool Fixed::operator<(const Fixed &other) const
 {
-	return this->_fixedPointValue < copy._fixedPointValue;
+	return this->_fixedPointValue < other._fixedPointValue;
 }
 
-bool Fixed::operator>=(const Fixed &copy) const {
-	return this->_fixedPointValue >= copy._fixedPointValue;
+bool Fixed::operator>=(const Fixed &other) const {
+	return this->_fixedPointValue >= other._fixedPointValue;
 }
 
-bool Fixed::operator<=(const Fixed &copy) const
+bool Fixed::operator<=(const Fixed &other) const
 {
-	return this->_fixedPointValue <= copy._fixedPointValue;
+	return this->_fixedPointValue <= other._fixedPointValue;
 }
 
-bool Fixed::operator==(const Fixed &copy) const 
+bool Fixed::operator==(const Fixed &other) const 
 {
-	return this->_fixedPointValue == copy._fixedPointValue;
+	return this->_fixedPointValue == other._fixedPointValue;
 }
 
-bool Fixed::operator!=(const Fixed &copy) const 
+bool Fixed::operator!=(const Fixed &other) const 
 {
-	return this->_fixedPointValue != copy._fixedPointValue;
+	return this->_fixedPointValue != other._fixedPointValue;
 }
 
-Fixed Fixed::operator+(const Fixed &copy) const
+// ============================================================================
+// ARITHMETIC OPERATORS (4 operators)
+// ============================================================================
+
+Fixed Fixed::operator+(const Fixed &other) const
 {
 	Fixed result;
-	result.setRawBits(this->_fixedPointValue + copy._fixedPointValue);
+	result.setRawBits(this->_fixedPointValue + other._fixedPointValue);
 	return result;
 }
 
-Fixed Fixed::operator-(const Fixed &copy) const
+Fixed Fixed::operator-(const Fixed &other) const
 {
 	Fixed result;
-	result.setRawBits(this->_fixedPointValue - copy._fixedPointValue);
+	result.setRawBits(this->_fixedPointValue - other._fixedPointValue);
 	return result;
 }
 
-Fixed Fixed::operator*(const Fixed &copy) const
+// Multiplication operator: a * b
+// For fixed-point multiplication, we multiply and then divide by 256
+// Example: (2.5 * 256) * (3.0 * 256) = (640 * 768) = 491520
+//          Then divide by 256: 491520 / 256 = 1920 (which represents 7.5)
+Fixed Fixed::operator*(const Fixed &other) const
 {
 	Fixed result;
-	result = this->_fixedPointValue * copy._fixedPointValue;
-	// result.setRawBits(temp >> _fractionalBits);
+	long temp = (long)this->_fixedPointValue * (long)other._fixedPointValue;
+	result.setRawBits(temp >> _fractionalBits);
 	return result;
 }
 
-Fixed Fixed::operator/(const Fixed &copy) const
+// Division operator: a / b
+// For fixed-point division, we multiply the dividend by 256 before dividing
+// Example: (7.5 * 256) / (2.5 * 256) should give 3.0 * 256
+//          So we do: (1920 * 256) / 640 = 491520 / 640 = 768 (which represents 3.0)
+Fixed Fixed::operator/(const Fixed &other) const
 {
 	Fixed result;
-	long temp = ((long)this->_fixedPointValue << _fractionalBits) / copy._fixedPointValue;
+	long temp = ((long)this->_fixedPointValue << _fractionalBits) / other._fixedPointValue;
 	result.setRawBits(temp);
 	return result;
 }
 
-Fixed &Fixed::operator++()
+// ============================================================================
+// INCREMENT/DECREMENT OPERATORS (4 operators)
+// ============================================================================
+
+Fixed &Fixed::operator++() // Pre-increment: ++a (increments then returns)
 {
 	this->_fixedPointValue++;
 	return *this;
 }
 
-Fixed Fixed::operator++(int)
+Fixed Fixed::operator++(int) // Post-increment: a++ (returns then increments)
 {
 	Fixed temp(*this);
 	this->_fixedPointValue++;
@@ -147,6 +167,10 @@ int Fixed::toInt(void) const
 	return this->_fixedPointValue >> _fractionalBits;
 }
 
+// ============================================================================
+// STATIC MIN/MAX FUNCTIONS
+// ============================================================================
+
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
 	return (a < b) ? a : b;
@@ -166,39 +190,6 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
 	return (a > b) ? a : b;
 }
-
-
-// Fixed	&Fixed::min(Fixed &first, Fixed &second)
-// {
-// 	if (first.toFloat() <= second.toFloat())
-// 		return (first);
-// 	else
-// 		return (second);
-// }
-
-// const Fixed	&Fixed::min(const Fixed &first, const Fixed &second)
-// {
-// 	if (first.toFloat() <= second.toFloat())
-// 		return (first);
-// 	else
-// 		return (second);
-// }
-
-// Fixed	&Fixed::max(Fixed &first, Fixed &second)
-// {
-// 	if (first.toFloat() >= second.toFloat())
-// 		return (first);
-// 	else
-// 		return (second);
-// }
-
-// const Fixed	&Fixed::max(const Fixed &first, const Fixed &second)
-// {
-// 	if (first.toFloat() >= second.toFloat())
-// 		return (first);
-// 	else
-// 		return (second);
-// }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {

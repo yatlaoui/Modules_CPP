@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 21:52:13 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/24 15:45:42 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/26 08:12:28 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,19 @@ class Fixed
 
         // Comparison operators (6 operators)
         // These allow us to compare two Fixed numbers
-        bool operator>(const Fixed &copy) const;   // Greater than
-        bool operator<(const Fixed &copy) const;   // Less than
-        bool operator>=(const Fixed &copy) const;  // Greater than or equal
-        bool operator<=(const Fixed &copy) const;  // Less than or equal
-        bool operator==(const Fixed &copy) const;  // Equal to
-        bool operator!=(const Fixed &copy) const;  // Not equal to
+        bool operator>(const Fixed &other) const;   // Greater than
+        bool operator<(const Fixed &other) const;   // Less than
+        bool operator>=(const Fixed &other) const;  // Greater than or equal
+        bool operator<=(const Fixed &other) const;  // Less than or equal
+        bool operator==(const Fixed &other) const;  // Equal to
+        bool operator!=(const Fixed &other) const;  // Not equal to
 
         // Arithmetic operators (4 operators)
         // These allow us to do math with Fixed numbers
-        Fixed operator+(const Fixed &copy) const;  // Addition
-        Fixed operator-(const Fixed &copy) const;  // Subtraction
-        Fixed operator*(const Fixed &copy) const;  // Multiplication
-        Fixed operator/(const Fixed &copy) const;  // Division
+        Fixed operator+(const Fixed &other) const;  // Addition
+        Fixed operator-(const Fixed &other) const;  // Subtraction
+        Fixed operator*(const Fixed &other) const;  // Multiplication
+        Fixed operator/(const Fixed &other) const;  // Division
 
         // Increment/Decrement operators (4 operators)
         // These increase or decrease the value by the smallest possible increment
