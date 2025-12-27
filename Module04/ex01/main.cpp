@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 10:49:39 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/27 10:49:54 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/27 12:13:52 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ int main()
     for (int idx = 0; idx < arraySize / 2; idx++) {
         animals[idx] = new Dog();
     }
+
+    std::cout << "\n=== subject test===" << std::endl;
+    Dog hhh;
+    {
+        Dog tmp = hhh;
+        
+    }
+    std::cout << "=== end ===" << std::endl;
+    
     
     // Fill half with Cats
     for (int idx = arraySize / 2; idx < arraySize; idx++) {
