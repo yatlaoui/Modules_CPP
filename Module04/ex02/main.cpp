@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 07:46:57 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/27 12:44:24 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/27 14:45:45 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,5 @@ int main() {
     std::cout << "Before assignment: " << another.getBrain()->getIdea(0) << std::endl;
     another = basic;
     std::cout << "After assignment: " << another.getBrain()->getIdea(0) << std::endl;
-
     return 0;
 }
