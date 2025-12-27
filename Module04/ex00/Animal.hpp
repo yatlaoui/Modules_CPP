@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 15:57:59 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/25 02:15:04 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/27 05:53:56 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Animal
         Animal();
         Animal(const Animal& other);
         Animal& operator=(const Animal& other);
-        virtual ~Animal();
+        virtual ~Animal(); // When you delete an object through a base class pointer (Animal*), the destructor must be virtual to ensure the derived class destructor is called first, preventing memory leaks.
 
-        virtual void makeSound() const;
+        virtual void makeSound() const; //allows override
         std::string getType() const;
 };

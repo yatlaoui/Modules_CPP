@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 15:58:16 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/25 02:18:46 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/27 05:22:42 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Cat::Cat()
     std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other) {
+Cat::Cat(const Cat& other) : Animal(other)
+{
     std::cout << "Cat copy constructor called" << std::endl;
 }
 

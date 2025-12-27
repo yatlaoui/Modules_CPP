@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/27 10:49:39 by yasmine           #+#    #+#             */
+/*   Updated: 2025/12/27 10:49:54 by yasmine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-int main() {
-    std::cout << "=== Testing from Subject ===" << std::endl;
+int main()
+{
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     
@@ -61,5 +73,5 @@ int main() {
     another = basic;
     std::cout << "After assignment: " << another.getBrain()->getIdea(0) << std::endl;
 
-    return 0;
+    return (0);
 }
