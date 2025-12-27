@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 07:46:57 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/24 07:47:00 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/27 12:44:24 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 
 int main() {
     std::cout << "=== Testing Abstract Animal ===" << std::endl;
-    // This should NOT compile:
-    // const Animal* meta = new Animal(); // ERROR: Cannot instantiate abstract class
+    // The following lines should NOT compile because Animal is an abstract class:
+    // Animal test;                        // ERROR: cannot declare variable of abstract type
+    // const Animal* meta = new Animal();  // ERROR: invalid abstract type for new-expression
+    // This is because Animal::makeSound() is a pure virtual function (= 0)
     
     std::cout << "=== Testing from Subject ===" << std::endl;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    
+
     delete j; // should not create a leak
     delete i;
 
