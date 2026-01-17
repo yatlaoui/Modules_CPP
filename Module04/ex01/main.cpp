@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 10:49:39 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/27 12:13:52 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/27 17:54:43 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,49 +20,35 @@ int main()
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     
-    delete j; // should not create a leak
+    delete j;
     delete i;
 
-    std::cout << "\n=== Creating Array of Animals ===" << std::endl;
-    const int arraySize = 10;
+    std::cout << "=== An Array of Animals ===" << std::endl;
+    
+    const int arraySize = 8;
     Animal* animals[arraySize];
     
-    // Fill half with Dogs
-    for (int idx = 0; idx < arraySize / 2; idx++) {
-        animals[idx] = new Dog();
-    }
-
-    std::cout << "\n=== subject test===" << std::endl;
-    Dog hhh;
+    // Half with Dogs
+    for (int index = 0; index < arraySize / 2; index++)
+        animals[index] = new Dog();
+    // Half with Cats
+    for (int index = arraySize / 2; index < arraySize; index++)
+        animals[index] = new Cat();
+    
+    std::cout << "\n=== Sounds ===" << std::endl;
+    for (int index = 0; index < arraySize; index++)
     {
-        Dog tmp = hhh;
-        
+        std::cout << animals[index]->getType() << ": ";
+        animals[index]->makeSound();
     }
-    std::cout << "=== end ===" << std::endl;
-    
-    
-    // Fill half with Cats
-    for (int idx = arraySize / 2; idx < arraySize; idx++) {
-        animals[idx] = new Cat();
-    }
+    std::cout << "\n=== Array Deletion ===" << std::endl;
+    for (int index = 0; index < arraySize; index++)
+        delete animals[index];
 
-    std::cout << "\n=== Testing Sounds ===" << std::endl;
-    for (int idx = 0; idx < arraySize; idx++) {
-        std::cout << animals[idx]->getType() << ": ";
-        animals[idx]->makeSound();
-    }
-
-    std::cout << "\n=== Deleting Array ===" << std::endl;
-    for (int idx = 0; idx < arraySize; idx++) {
-        delete animals[idx];
-    }
-
-    std::cout << "\n=== Testing Deep Copy ===" << std::endl;
+    std::cout << "\n=== Copy Constructor ===" << std::endl;
     Dog basic;
-    basic.getBrain()->setIdea(0, "I am a good dog!");
-    basic.getBrain()->setIdea(1, "I love bones");
-    
-    std::cout << "\n=== Testing Copy Constructor ===" << std::endl;
+    basic.getBrain()->setIdea(0, "Hello!");
+    basic.getBrain()->setIdea(1, "Let's go for a walk");
     {
         Dog tmp = basic;
         std::cout << "Original idea: " << basic.getBrain()->getIdea(0) << std::endl;
@@ -75,12 +61,11 @@ int main()
     }
     std::cout << "After scope, original still exists" << std::endl;
 
-    std::cout << "\n=== Testing Assignment Operator ===" << std::endl;
+    std::cout << "\n=== Assignment Operator ===" << std::endl;
     Dog another;
     another.getBrain()->setIdea(0, "I am another dog");
     std::cout << "Before assignment: " << another.getBrain()->getIdea(0) << std::endl;
     another = basic;
     std::cout << "After assignment: " << another.getBrain()->getIdea(0) << std::endl;
-
     return (0);
 }

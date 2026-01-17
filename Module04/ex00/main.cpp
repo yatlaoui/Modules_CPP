@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 07:40:31 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/27 06:14:04 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:10:56 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main()
     const WrongAnimal* wrongCat = new WrongCat();
 
     std::cout << wrongCat->getType() << " " << std::endl;
-    wrongCat->makeSound(); // will output WrongAnimal sound bc not polymorphic
+    wrongCat->makeSound(); // will output WrongAnimal sound! (bc not polymorphic)
     wrongMeta->makeSound();
 
     delete wrongMeta;
