@@ -6,7 +6,14 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:10:54 by yasmine           #+#    #+#             */
-/*   Updated: 2026/01/17 16:10:55 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/01/17 17:46:55 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
+
+int main()
+{
+    std::cout << "=== Animal ===" << std::endl;
+    return (0);
+}
