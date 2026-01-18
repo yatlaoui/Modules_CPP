@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 21:52:13 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/26 08:12:28 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/26 11:27:30 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,55 +22,41 @@ class Fixed
         static const int _fractionalBits = 8;
 
     public:
-        // Constructors and destructor
-        Fixed();                              // Default constructor
-        Fixed(const int value);               // Int constructor
-        Fixed(const float value);             // Float constructor
-        Fixed(const Fixed &copy);            // Copy constructor
-        ~Fixed();                             // Destructor
+        Fixed();
+        Fixed(const int value);
+        Fixed(const float value);
+        Fixed(const Fixed &copy);
+        ~Fixed();                            
 
-        // Assignment operator
         Fixed &operator=(const Fixed &copy);
 
-        // Comparison operators (6 operators)
-        // These allow us to compare two Fixed numbers
-        bool operator>(const Fixed &other) const;   // Greater than
-        bool operator<(const Fixed &other) const;   // Less than
-        bool operator>=(const Fixed &other) const;  // Greater than or equal
-        bool operator<=(const Fixed &other) const;  // Less than or equal
-        bool operator==(const Fixed &other) const;  // Equal to
-        bool operator!=(const Fixed &other) const;  // Not equal to
+        bool operator>(const Fixed &other) const;
+        bool operator<(const Fixed &other) const; 
+        bool operator>=(const Fixed &other) const;
+        bool operator<=(const Fixed &other) const;
+        bool operator==(const Fixed &other) const;
+        bool operator!=(const Fixed &other) const;
 
-        // Arithmetic operators (4 operators)
-        // These allow us to do math with Fixed numbers
-        Fixed operator+(const Fixed &other) const;  // Addition
-        Fixed operator-(const Fixed &other) const;  // Subtraction
-        Fixed operator*(const Fixed &other) const;  // Multiplication
-        Fixed operator/(const Fixed &other) const;  // Division
+        Fixed operator+(const Fixed &other) const;
+        Fixed operator-(const Fixed &other) const;
+        Fixed operator*(const Fixed &other) const;
+        Fixed operator/(const Fixed &other) const;
 
-        // Increment/Decrement operators (4 operators)
-        // These increase or decrease the value by the smallest possible increment
-        // The smallest increment epsilon is 1/256 = 0.00390625
         Fixed &operator++();      // Pre-increment: ++a (increments then returns)
         Fixed operator++(int);    // Post-increment: a++ (returns then increments)
         Fixed &operator--();      // Pre-decrement: --a (decrements then returns)
         Fixed operator--(int);    // Post-decrement: a-- (returns then decrements)
 
-        // Getters and setters
         int getRawBits(void) const;
         void setRawBits(int const raw);
 
-        // Conversion methods
         float toFloat(void) const;
         int toInt(void) const;
 
-        // Static member functions for min/max
-        // These work on references and return the smaller/larger value
-        static Fixed &min(Fixed &a, Fixed &b);              // Non-const version
-        static const Fixed &min(const Fixed &a, const Fixed &b);  // Const version
-        static Fixed &max(Fixed &a, Fixed &b);              // Non-const version
-        static const Fixed &max(const Fixed &a, const Fixed &b);  // Const version
+        static Fixed &min(Fixed &a, Fixed &b);
+        static const Fixed &min(const Fixed &a, const Fixed &b);
+        static Fixed &max(Fixed &a, Fixed &b);
+        static const Fixed &max(const Fixed &a, const Fixed &b);
 };
 
-// Insertion operator overload for printing
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);

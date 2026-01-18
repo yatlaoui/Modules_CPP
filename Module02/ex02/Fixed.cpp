@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 21:52:18 by yasmine           #+#    #+#             */
-/*   Updated: 2025/12/26 08:52:30 by yasmine          ###   ########.fr       */
+/*   Updated: 2025/12/26 11:27:03 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,6 @@ Fixed Fixed::operator-(const Fixed &other) const
 	return result;
 }
 
-// Multiplication operator: a * b
-// For fixed-point multiplication, we multiply and then divide by 256
-// Example: (2.5 * 256) * (3.0 * 256) = (640 * 768) = 491520
-//          Then divide by 256: 491520 / 256 = 1920 (which represents 7.5)
 Fixed Fixed::operator*(const Fixed &other) const
 {
 	Fixed result;
@@ -105,10 +101,6 @@ Fixed Fixed::operator*(const Fixed &other) const
 	return result;
 }
 
-// Division operator: a / b
-// For fixed-point division, we multiply the dividend by 256 before dividing
-// Example: (7.5 * 256) / (2.5 * 256) should give 3.0 * 256
-//          So we do: (1920 * 256) / 640 = 491520 / 640 = 768 (which represents 3.0)
 Fixed Fixed::operator/(const Fixed &other) const
 {
 	Fixed result;

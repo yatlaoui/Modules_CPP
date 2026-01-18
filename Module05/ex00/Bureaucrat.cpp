@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:10:47 by yasmine           #+#    #+#             */
-/*   Updated: 2026/01/17 16:45:42 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/01/17 19:02:40 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,10 @@
 //     Cat somecat;
 //     Cat::Leg simecatsleg;
 //     return(0);
+// }
+
+// std::ostream &operator<<(std::ostream &out, const Bureaucrat &fixed)
+// {
+// 	out << fixed.toFloat();
+// 	return (out);
 // }
