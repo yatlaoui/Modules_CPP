@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:10:54 by yasmine           #+#    #+#             */
-/*   Updated: 2026/01/17 17:46:55 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/01/18 15:32:23 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main()
 {
-    std::cout << "=== Animal ===" << std::endl;
+    std::cout << "Module 05!!!" << std::endl;
     return (0);
 }
