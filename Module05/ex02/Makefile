@@ -6,15 +6,19 @@
 #    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/17 16:11:11 by yasmine           #+#    #+#              #
-#    Updated: 2026/06/26 00:56:51 by yasmine          ###   ########.fr        #
+#    Updated: 2026/06/26 01:47:23 by yasmine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = form
+NAME = Aform
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp \
+	PresidentialPardonForm.cpp \
+	RobotomyRequestForm.cpp \
+	ShrubberyCreationForm.cpp \
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

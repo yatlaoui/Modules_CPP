@@ -6,12 +6,12 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:10:47 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/24 23:35:55 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/26 01:54:24 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp" 
+#include "AForm.hpp" 
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150){}
 
@@ -59,11 +59,11 @@ void Bureaucrat::decrementGrade()
     _grade++;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     try
     {
-        form.beSigned(*this); //pas compris
+        form.beSigned(*this);
         std::cout << _name << " signed " << form.getName() << std::endl;
     }
     catch(std::exception &e)
