@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:10:51 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/26 01:53:46 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/26 17:47:08 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Bureaucrat
         void incrementGrade();
         void decrementGrade();
         void signForm(AForm &form);
+        void executeForm(AForm const &form) const;
     
         class GradeTooHighException : public std::exception 
         {
