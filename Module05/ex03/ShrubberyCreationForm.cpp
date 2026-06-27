@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 01:55:38 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/27 10:13:11 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 12:53:09 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
-void ShrubberyCreationForm::exectueAction() const
+void ShrubberyCreationForm::executeAction() const
 {
     std::ofstream file((_target + "_shrubbery").c_str());
     if (!file.is_open())

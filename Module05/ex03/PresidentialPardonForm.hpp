@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 01:55:23 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/27 10:09:08 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 12:52:54 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
         virtual ~PresidentialPardonForm();
 
-    virtual void exectueAction() const;
+    virtual void executeAction() const;
 };

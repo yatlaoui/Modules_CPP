@@ -6,11 +6,11 @@
 #    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/17 16:11:07 by yasmine           #+#    #+#              #
-#    Updated: 2026/06/27 10:50:55 by yasmine          ###   ########.fr        #
+#    Updated: 2026/06/27 12:45:41 by yasmine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = intern
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 01:55:33 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/27 09:58:52 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 12:52:59 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ class RobotomyRequestForm : public AForm
         RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
         virtual ~RobotomyRequestForm();
 
-    virtual void exectueAction() const;
+    virtual void executeAction() const;
 };

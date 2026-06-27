@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 01:55:25 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/27 10:13:40 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 12:54:16 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 
 RobotomyRequestForm::~RobotomyRequestForm(){}
 
-void RobotomyRequestForm::exectueAction() const
+void RobotomyRequestForm::executeAction() const
 {
     std::cout << "Bzzzzzz....Brrrrr...." << std::endl;
     std::srand(std::time(NULL));
