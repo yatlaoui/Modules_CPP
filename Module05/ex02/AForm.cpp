@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:57:05 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/26 17:27:05 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 11:14:50 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void AForm::execute(Bureaucrat const &executor) const
         throw FormNotSignedException();
     if (executor.getGrade() > _gradeToExecute) 
         throw GradeTooLowException();
-    excecuteAction();
+    executeAction();
 }
 
 const char *AForm::GradeTooHighException::what() const throw()

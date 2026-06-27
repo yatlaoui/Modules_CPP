@@ -6,8 +6,36 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 01:55:25 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/26 02:03:07 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 11:18:38 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), _target("default"){}
+
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45), _target(target){}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other), _target(other._target){}
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
+{
+    if (this != &other)
+	{
+		AForm::operator=(other);
+		_target = other._target;
+	}
+	return *this;
+}
+
+RobotomyRequestForm::~RobotomyRequestForm(){}
+
+void RobotomyRequestForm::executeAction() const
+{
+    std::cout << "Bzzzzzz....Brrrrr...." << std::endl;
+    std::srand(std::time(NULL));
+    if (std::rand() % 2)
+        std::cout << _target << " has been robotomized successfully" << std::endl;
+    else
+        std::cout << "Robotomy failed." << std::endl;
+}

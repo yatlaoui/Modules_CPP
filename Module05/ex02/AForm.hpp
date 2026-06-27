@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:57:00 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/26 17:28:32 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 11:14:35 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AForm
         AForm(const std::string &name, int gradeToSign, int gradeToExecute);
         AForm(const AForm &other);
 		AForm &operator=(const AForm &other);
-		virtual ~AForm(); //essential for polymophic types
+		virtual ~AForm();
 
         const std::string &getName() const;
         bool isSigned() const;
@@ -41,7 +41,7 @@ class AForm
         void beSigned(const Bureaucrat &Bureaucrat);
         
         void execute(Bureaucrat const &executor) const;
-        virtual void excecuteAction() const = 0;
+        virtual void executeAction() const = 0;
         
         class GradeTooHighException : public std::exception 
         {

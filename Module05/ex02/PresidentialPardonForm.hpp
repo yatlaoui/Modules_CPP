@@ -6,20 +6,24 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 01:55:23 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/26 17:57:04 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 11:18:23 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-class PresidentialPardonForm
+#include "AForm.hpp"
+
+class PresidentialPardonForm : public AForm
 {
     private:
-        
+        std::string _target;
     public:
         PresidentialPardonForm();
-        PresidentialPardonForm();
-        PresidentialPardonForm();
-        PresidentialPardonForm();
-        ~PresidentialPardonForm();
+        PresidentialPardonForm(const std::string &target);
+        PresidentialPardonForm(const PresidentialPardonForm &other);
+        PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
+        virtual ~PresidentialPardonForm();
+
+    virtual void executeAction() const;
 };
