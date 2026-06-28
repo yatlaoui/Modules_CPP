@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 01:55:48 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/27 12:55:42 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/28 13:35:12 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
         virtual ~ShrubberyCreationForm();
 
-    // Overrides the pure virtual from AForm: this is what actually happens
-	// when the form is executed.
     virtual void executeAction() const;
 };

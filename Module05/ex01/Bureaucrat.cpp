@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:10:47 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/27 22:12:19 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/28 13:33:10 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ void Bureaucrat::decrementGrade()
     _grade++;
 }
 
-void Bureaucrat::signForm(Form &form) //& means on travaille sur le vrai form pas une copie
+void Bureaucrat::signForm(Form &form)
 {
     try
     {
-        form.beSigned(*this); //bureaucrat, si le b a un bon grade il est signé sinon exception
+        form.beSigned(*this);
         std::cout << _name << " signed " << form.getName() << std::endl;
     }
     catch(std::exception &e)
