@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 19:08:40 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/26 19:13:51 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 23:37:11 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 class ScalarConverter
 {
     private:
-        int _number;
+        ScalarConverter();
+        ScalarConverter(const ScalarConverter &other);
+        ScalarConverter &operator=(const ScalarConverter &other);
+        ~ScalarConverter();
     public:
-        int convert(std::string literal);
+        static void convert(const std::string &literal);
 };

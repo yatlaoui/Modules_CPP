@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:10:54 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/25 00:34:53 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 22:00:49 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
     }
     catch (std::exception &e)
     {
-        std::cout << "Exception: " << e.what() << std::endl; // "Quand une exception est lancée, stocke-la dans la variable e.", e pour exepction mais tu peux mettre la lettre que tu veux
+        std::cout << "Exception: " << e.what() << std::endl; // "Quand une exception est lancée, stocke-la dans la variable e."
     }
     
     std::cout << "\n=== Test 2: Grade too high (0) ===" << std::endl;

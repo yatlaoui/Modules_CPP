@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:10:47 by yasmine           #+#    #+#             */
-/*   Updated: 2026/06/26 01:54:32 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/06/27 22:12:19 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,16 @@ void Bureaucrat::decrementGrade()
     _grade++;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(Form &form) //& means on travaille sur le vrai form pas une copie
 {
     try
     {
-        form.beSigned(*this);
+        form.beSigned(*this); //bureaucrat, si le b a un bon grade il est signé sinon exception
         std::cout << _name << " signed " << form.getName() << std::endl;
     }
     catch(std::exception &e)
     {
-        std::cerr << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+        std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 
