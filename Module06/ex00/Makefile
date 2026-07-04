@@ -6,11 +6,11 @@
 #    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/26 19:08:44 by yasmine           #+#    #+#              #
-#    Updated: 2026/06/26 19:11:23 by yasmine          ###   ########.fr        #
+#    Updated: 2026/07/03 14:19:48 by yasmine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scalarconverter
+NAME = convert
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
@@ -22,6 +22,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
