@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 19:08:42 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/03 14:22:04 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/05 17:16:44 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,9 +147,9 @@ void ScalarConverter::convert(const std::string &literal)
     }
     double value;
     if (isLiteralChar(literal))
-        value = static_cast<double>(literal[0]); //?? pourquoi en double? pourquoi literal0
+        value = static_cast<double>(literal[0]); //?? on cast en double, on separe char des autres car c'estuun char et les autres sont des nombres
     else if (isLiteralDouble(literal) || isLiteralFloat(literal) || isLiteralInt(literal))
-        value = std::strtod(literal.c_str(), NULL); //???
+        value = std::strtod(literal.c_str(), NULL);
     else
     {
         std::cout << "char: impossible" << std::endl;
