@@ -6,7 +6,7 @@
 #    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/30 15:47:13 by yasmine           #+#    #+#              #
-#    Updated: 2026/07/05 04:58:02 by yasmine          ###   ########.fr        #
+#    Updated: 2026/07/10 02:49:14 by yasmine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = base
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp .cpp
+SRC = main.cpp Base.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

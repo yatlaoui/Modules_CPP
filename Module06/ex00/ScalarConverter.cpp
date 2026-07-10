@@ -6,18 +6,15 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 19:08:42 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/05 17:16:44 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/07 10:21:39 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter(){}
-
 ScalarConverter::ScalarConverter(const ScalarConverter &){}
-
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter &){return (*this);}
-
 ScalarConverter::~ScalarConverter(){}
 
 //=========================================================================
