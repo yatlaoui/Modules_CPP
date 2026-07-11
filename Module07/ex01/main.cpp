@@ -6,9 +6,18 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:32:32 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/11 17:53:40 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/11 18:55:46 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iter.hpp>
+#include "iter.hpp"
 
+int main()
+{
+	int tab[] = {0, 1, 2, 3, 4};
+	Awesome tab2[5];
+
+	iter(tab, 5, print);
+	iter(tab2, 5, print);
+	return (0);
+}

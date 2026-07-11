@@ -6,12 +6,12 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:32:39 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/11 17:55:09 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/11 19:10:37 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 
