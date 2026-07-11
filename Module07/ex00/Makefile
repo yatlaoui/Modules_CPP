@@ -6,15 +6,15 @@
 #    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/11 01:48:18 by yasmine           #+#    #+#              #
-#    Updated: 2026/07/11 01:48:30 by yasmine          ###   ########.fr        #
+#    Updated: 2026/07/11 17:27:57 by yasmine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = whatever
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp whatever.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

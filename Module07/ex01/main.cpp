@@ -1,19 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.cpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/11 01:48:31 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/11 02:41:09 by yasmine          ###   ########.fr       */
+/*   Created: 2026/07/11 17:32:32 by yasmine           #+#    #+#             */
+/*   Updated: 2026/07/11 17:53:40 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#include <iter.hpp>
 
-template<typename T>
-T const & max(T const & x, T const & y)
-{
-    return (x>=y ? x : y);
-}
