@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:32:39 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/11 20:20:16 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/17 02:36:03 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,23 @@ int main(int, char**)
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
+
+    // Fill both arrays with the same random values
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
     }
+
     //SCOPE
+    // Test copy assignment/copy constructor and destructor
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
     }
 
+    // Verify that all copied values are correct
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -40,6 +45,7 @@ int main(int, char**)
             return 1;
         }
     }
+    // Test negative index
     try
     {
         numbers[-2] = 0;
@@ -48,6 +54,7 @@ int main(int, char**)
     {
         std::cerr << e.what() << '\n';
     }
+    // Test index equal to the array size (out of bounds)
     try
     {
         numbers[MAX_VAL] = 0;
@@ -57,10 +64,13 @@ int main(int, char**)
         std::cerr << e.what() << '\n';
     }
 
+    // Modify every element to ensure write access works
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
     }
+
+    // Free the array
     delete [] mirror;
-    return 0;
+    return (0);
 }
