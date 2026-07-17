@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 19:08:42 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/07 10:21:39 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/17 21:11:49 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,17 @@ static bool isLiteralFloat(const std::string &str)
 {
     if (str.length() < 2 || str[str.length() - 1] != 'f')
         return (false);
-    std::string body = str.substr(0, str.length() - 1); //substr(début, longueur)
+    std::string body = str.substr(0, str.length() - 1);
     char *end;
     std::strtod(body.c_str(), &end);
     return (*end == '\0');
-    // True only if the WHOLE body was a valid number.
 }
 
 static bool isLiteralDouble(const std::string &str)
 {
-    char *end; //on déclare un ptr
-    std::strtod(str.c_str(), &end); // src.c_str transforme stdtring en const char* pour utiliser strtod qui ne peut pas utiliser de stdstring; strtod lit une chaine et tant qu'elle voit un nombre elle continue puis s'arreter quand elle voit des letres, on met dans end l'adresse de la premiere lettre qu'elle va trouver et s'arreter
+    char *end;
+    std::strtod(str.c_str(), &end);
     return (*end == '\0' && str.find('.') != std::string::npos);
-    //return true si end est 0 donc strtod a pu lire toute la chaine
-    // et si il y a un point dans la chaine soit find a trouvé un point soit find renvoie npos, signifiant je n'ai rien trouvé
 }
 
 static bool isPseudoLiteral(const std::string &str)
@@ -72,19 +69,10 @@ static bool isPseudoLiteral(const std::string &str)
 // Conversion Output
 //=========================================================================
 
-// On prend un double comme base unique parce que c’est le type le plus “universel” 
-//pour parser et représenter des nombres en C++. (float est moins precis que double qui a plus de range)
-
-// On utilise double parce que :
-
-// il accepte presque tous les formats numériques
-// il est le résultat de strtod
-// il sert de base unique pour toutes les conversions
-// il évite de gérer 4 parsers différents
-static void PrintFloatingValue(double d) //on recoit un nombre décimal
+static void PrintFloatingValue(double d)
 {
     std::cout << d;
-    if (!std::isnan(d) && !std::isinf(d) && d == static_cast<long>(d)) //dernire condition vérifie si le nombre est entier ou pas (42.0 == 42 or 42.5 != 42)
+    if (!std::isnan(d) && !std::isinf(d) && d == static_cast<long>(d))
         std::cout << ".0";
 }
 
@@ -94,10 +82,10 @@ static void PrintAll(double d)
     std::cout << "char: ";
     if (std::isnan(d) || std::isinf(d) || d < 0 || d > 127)
         std::cout << "impossible" << std::endl;
-    else if (!std::isprint(static_cast<int>(d))) //on vérifie si il est printable, si cest un ascii, is print prend un int,
+    else if (!std::isprint(static_cast<int>(d)))
         std::cout << "Non displayable" << std::endl;
     else
-        std::cout << "'" << static_cast<char>(d) << "'" << std::endl; //o, verti le double en char
+        std::cout << "'" << static_cast<char>(d) << "'" << std::endl;
     
     // ---- Int ----
     std::cout << "int: ";
@@ -108,12 +96,12 @@ static void PrintAll(double d)
 
     // --- Float ----
     std::cout << "float: ";
-    PrintFloatingValue(static_cast<float>(d)); //apres appel de printfloatingvalie, si le double est tres precis, float lui donnera moins de precision
+    PrintFloatingValue(static_cast<float>(d));
     std::cout << "f" << std::endl;
 
     // ---- Double ----
     std::cout << "double: ";
-    PrintFloatingValue(d); //c'est deja un double pas besoin de le cast
+    PrintFloatingValue(d);
     std::cout << std::endl;
 }
 
@@ -144,7 +132,7 @@ void ScalarConverter::convert(const std::string &literal)
     }
     double value;
     if (isLiteralChar(literal))
-        value = static_cast<double>(literal[0]); //?? on cast en double, on separe char des autres car c'estuun char et les autres sont des nombres
+        value = static_cast<double>(literal[0]);
     else if (isLiteralDouble(literal) || isLiteralFloat(literal) || isLiteralInt(literal))
         value = std::strtod(literal.c_str(), NULL);
     else

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 15:47:11 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/10 15:40:40 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/17 21:13:32 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int main()
 		Base *p = generate();
 
 		std::cout << "pointer version  : ";
-		identify(p);   // pass the pointer
+		identify(p);
 		std::cout << "reference version: ";
-		identify(*p);  // pass what the pointer points to, as a reference
-		delete p; // we used 'new' in generate(), so we must free it here
+		identify(*p);
+		delete p;
         i++;
 	}
 	return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 04:53:31 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/09 02:17:49 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/17 21:12:55 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,3 @@ class Serializer
         static uintptr_t serialize(Data* ptr);
         static Data* deserialize(uintptr_t raw);
 };
-
-//uniptr est un integer assez grand pour tenir un ptr
-// serialize() ne copie pas l'objet et ne le sauvegarde pas. 
-// Elle transforme simplement l'adresse contenue dans un pointeur en un entier (uintptr_t).
-// deserialize() fait l'opération inverse en réinterprétant 
-// cet entier comme un pointeur vers le même objet.
