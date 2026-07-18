@@ -6,7 +6,7 @@
 #    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/12 02:59:43 by yasmine           #+#    #+#              #
-#    Updated: 2026/07/12 03:01:37 by yasmine          ###   ########.fr        #
+#    Updated: 2026/07/19 00:21:09 by yasmine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,16 @@ CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp Span.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
