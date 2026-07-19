@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:32:29 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/16 00:30:51 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/19 13:49:43 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ void increment(T &x)
 	return;
 }
 
-// Calls `function` on each of the `length` elements of `array`.
-// `F` is a template parametern so we can call any type of function
-// le fait d'utiliser deux templates, un por le type du tab et un autre pour
-// la fonction fait que ca prend des tab const et non const, ça donne plus de liberté
 template <typename T, typename F>
 void iter(T *array, size_t const length, F function)
 {
