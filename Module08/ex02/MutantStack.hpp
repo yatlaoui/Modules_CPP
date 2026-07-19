@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 03:00:06 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/19 08:15:04 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/19 11:32:36 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,11 @@ class MutantStack : public std::stack<T>
 		}
 		~MutantStack() {}
 
-		// The stack's underlying container is a std::deque<T>.
-		// We just reuse its iterator types.
 		typedef typename std::deque<T>::iterator               iterator;
 		typedef typename std::deque<T>::const_iterator         const_iterator;
 		typedef typename std::deque<T>::reverse_iterator       reverse_iterator;
 		typedef typename std::deque<T>::const_reverse_iterator const_reverse_iterator;
 
-		// begin()/end() just forward to the underlying container "c".
 		iterator begin()
         { 
             return (this->c.begin());
