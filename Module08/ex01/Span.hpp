@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 02:59:55 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/19 00:17:02 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/19 07:25:06 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,30 @@
 #include <numeric>
 #include <vector>
 
-// Span: stores at most N integers and can tell you the shortest / longest
-// distance between any two of the numbers it holds.
 class Span
 {
 	private:
-		unsigned int		_maxSize; // how many numbers we are allowed to store
-		std::vector<int>	_numbers; // the actual storage
+		unsigned int		_maxSize;
+		std::vector<int>	_numbers;
 
 	public:
-		Span();                              // default (kept minimal, private use)
-		Span(unsigned int n);                // the "real" constructor
+		Span();
+		Span(unsigned int n);
 		Span(const Span& other);
 		Span& operator=(const Span& other);
 		~Span();
 
-		void addNumber(int number);          // add one number (throws if full)
-		int  shortestSpan() const;           // smallest distance between two numbers
-		int  longestSpan() const;            // biggest distance between two numbers
+		void addNumber(int number);
+		int  shortestSpan() const;
+		int  longestSpan() const;
+
+		template <typename InputIterator>
+		void addMany(InputIterator begin, InputIterator end)
+		{
+			if (_numbers.size() + static_cast<size_t>(std::distance(begin, end)) > _maxSize) //on cast parce que size renvoieun size_t et distance renvoie autre chose
+				throw std::out_of_range("addMany: not enough space in the Span");
+			_numbers.insert(_numbers.end(), begin, end); //rajoute a la fin de _numbers tous les éléments compris entre les itérateurs begin et end.
+		}
 
 		class SpanException : public std::exception
 		{

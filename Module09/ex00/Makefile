@@ -6,7 +6,32 @@
 #    By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/18 09:23:34 by yasmine           #+#    #+#              #
-#    Updated: 2026/07/18 09:23:35 by yasmine          ###   ########.fr        #
+#    Updated: 2026/07/19 07:08:39 by yasmine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = bitcoin
+CC = c++
+CFLAGS = -Wall -Werror -Wextra -std=c++98
+
+SRC = main.cpp BitcoinExchange.cpp
+
+OBJ = $(SRC:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

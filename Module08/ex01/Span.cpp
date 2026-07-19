@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 02:59:48 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/19 00:09:12 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/19 07:47:59 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ Span::~Span() {}
 
 void Span::addNumber(int number)
 {
-	// Already full? We are not allowed to store more than _maxSize numbers.
 	if (_numbers.size() >= _maxSize)
 		throw SpanException();
 	_numbers.push_back(number);
@@ -43,35 +42,22 @@ void Span::addNumber(int number)
 
 int Span::shortestSpan() const
 {
-	// We need at least 2 numbers to measure a distance between two of them.
 	if (_numbers.size() < 2)
 		throw SpanException();
-
-	// Idea: if we sort the numbers, the two closest values are always
-	// next to each other. So the shortest span is the smallest gap between
-	// two neighbours in the sorted list.
-	std::vector<int> sorted = _numbers;
+	std::vector<int> sorted = _numbers; //un nouveau vectoeur une copie
 	std::sort(sorted.begin(), sorted.end());
-
-	// std::adjacent_difference fills "diffs" with the gaps between neighbours.
-	// (Its very first element is a copy of sorted[0], so we skip index 0.)
-	std::vector<int> diffs(sorted.size());
-	std::adjacent_difference(sorted.begin(), sorted.end(), diffs.begin());
-
-	// The smallest of those gaps is our shortest span.
-	return (*std::min_element(diffs.begin() + 1, diffs.end()));
+	std::vector<int> diffs(sorted.size()); //un nouveau vectoeur une copie
+	std::adjacent_difference(sorted.begin(), sorted.end(), diffs.begin()); //trier du debut a la fin et placer au début
+	return (*std::min_element(diffs.begin() + 1, diffs.end())); //on skip le premier parce que c'est pas une diff
 }
 
 int Span::longestSpan() const
 {
 	if (_numbers.size() < 2)
 		throw SpanException();
-
-	// The longest distance is simply biggest value minus smallest value.
-	// std::min_element / std::max_element give us iterators to those.
-	int minValue = *std::min_element(_numbers.begin(), _numbers.end());
-	int maxValue = *std::max_element(_numbers.begin(), _numbers.end());
-	return (maxValue - minValue);
+	int min = *std::min_element(_numbers.begin(), _numbers.end());
+	int max = *std::max_element(_numbers.begin(), _numbers.end());
+	return (max - min);
 }
 
 const char* Span::SpanException::what() const throw()
