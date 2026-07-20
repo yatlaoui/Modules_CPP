@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yaatlaou <yaatlaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 02:59:48 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/19 07:47:59 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/20 12:06:11 by yaatlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int Span::shortestSpan() const
 {
 	if (_numbers.size() < 2)
 		throw SpanException();
-	std::vector<int> sorted = _numbers; //un nouveau vectoeur une copie
+	std::vector<int> sorted = _numbers;
 	std::sort(sorted.begin(), sorted.end());
-	std::vector<int> diffs(sorted.size()); //un nouveau vectoeur une copie
-	std::adjacent_difference(sorted.begin(), sorted.end(), diffs.begin()); //trier du debut a la fin et placer au début
-	return (*std::min_element(diffs.begin() + 1, diffs.end())); //on skip le premier parce que c'est pas une diff
+	std::vector<int> diffs(sorted.size());
+	std::adjacent_difference(sorted.begin(), sorted.end(), diffs.begin()); 
+	return (*std::min_element(diffs.begin() + 1, diffs.end()));
 }
 
 int Span::longestSpan() const
