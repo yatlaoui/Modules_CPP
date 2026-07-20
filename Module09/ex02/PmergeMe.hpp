@@ -6,13 +6,19 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 09:24:03 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/19 22:04:13 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/20 06:46:33 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <sys/time.h>
+#include <stdexcept>
+#include <algorithm>
 #include <iostream>
+#include <cstdlib>
+#include <sstream>
 #include <utility>
+#include <climits>
 #include <vector>
 #include <string>
 #include <deque>
@@ -23,7 +29,7 @@ class PmergeMe
 		std::vector<int> _vec;
 		std::deque<int>  _deq;
 
-		void parse(int argc, char **argv);
+		void parsing(int argc, char **argv);
 
 		void sortVector();
 		void sortDeque();
@@ -32,8 +38,8 @@ class PmergeMe
 		void mergeInsertDeq(std::deque<std::pair<int, int> > &v);
 		static bool cmpFirst(const std::pair<int, int> &a, const std::pair<int, int> &b);
 
-		std::vector<size_t> jacobOrder(size_t m) const;
-		void printVec(const std::string &label) const;
+		std::vector<size_t> buildJacobsthalOrder(size_t m) const;
+		void printVector(const std::string &label) const;
 
 	public:
 		PmergeMe();
@@ -41,5 +47,5 @@ class PmergeMe
 		PmergeMe &operator=(const PmergeMe &other);
 		~PmergeMe();
 
-		void run(int argc, char **argv);
+		void execute(int argc, char **argv);
 };

@@ -6,7 +6,7 @@
 /*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 09:23:56 by yasmine           #+#    #+#             */
-/*   Updated: 2026/07/19 22:01:55 by yasmine          ###   ########.fr       */
+/*   Updated: 2026/07/20 06:45:16 by yasmine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	PmergeMe sorter;
 	try
 	{
-		sorter.run(argc, argv);
+		sorter.execute(argc, argv);
 	}
 	catch (std::exception &e)
 	{
